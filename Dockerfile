@@ -4,7 +4,7 @@ LABEL maintainer="Shin FENG <shin.f.kan@gmail.com>"
 
 RUN set -x \
     # Install dependencies
-    && apk add --no-cache gcc g++ make \
+    && apk add --no-cache gcc g++ make libressl-dev \
     # Download latest live555 from official website
     && wget -qP ~ http://www.live555.com/liveMedia/public/live555-latest.tar.gz \
     && cd ~ \
