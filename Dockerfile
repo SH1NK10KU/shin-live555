@@ -16,7 +16,7 @@ RUN set -x \
     # Modify liveMedia/ByteStreamFileSource.cpp for loop playback.
     && sed -i ':a;N;s/handleClosure();\n    return;/fseek(fFid, 0, SEEK_SET);/;b' liveMedia/ByteStreamFileSource.cpp \
     # Modify mediaServer/DynamicRTSPServer.cpp for resizing buffer of out packet.
-    && sed -i -E 's/OutPacketBuffer::maxSize = [0-9]+/OutPacketBuffer::maxSize = 128000/' mediaServer/DynamicRTSPServer.cpp \
+    && sed -i -E 's/OutPacketBuffer::maxSize = [0-9]+/OutPacketBuffer::maxSize = 1920*1080/' mediaServer/DynamicRTSPServer.cpp \
     # Generate makefile
     && ./genMakefiles linux \
     # Build live555 from sources
